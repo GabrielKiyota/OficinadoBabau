@@ -5,6 +5,8 @@ public class Boss1 : MonoBehaviour
 {
    public GameObject LaserDoBoss1;
    public Transform localdodisparo;
+   public EstadoDoboss1 atual;
+   public float velocidadeDeRotacao;
   
    public float velocidadedoBoss1;
    public int vidaMaximaDoBoss1;
@@ -24,10 +26,27 @@ public class Boss1 : MonoBehaviour
    // Update is called once per frame
    void Update()
    {
+       if (atual == EstadoDoboss1.estado1)
+       {
+           UpdateEstado1();
+       }
+
+       if (atual == EstadoDoboss1.estado2)
+       {
+           UpdateEstado2();
+       }
+   }
+
+   void UpdateEstado1()
+   {
        MovimentarBoss1();
        AtirarLaser();
    }
 
+   void UpdateEstado2()
+   {
+      transform.Rotate(0,0,velocidadeDeRotacao * Time.deltaTime);
+   }
    private void MovimentarBoss1()
    {
        transform.position = Vector3.MoveTowards(transform.position, Target.position, 1f * Time.deltaTime);
@@ -50,9 +69,19 @@ public class Boss1 : MonoBehaviour
    {
        vidaAtualDoBoss1 -= danoParaReceber;
 
+       if (vidaAtualDoBoss1 <= vidaMaximaDoBoss1 / 2)
+       {
+           atual = EstadoDoboss1.estado2;
+       }
+
        if(vidaAtualDoBoss1 <= 0)
        {
           Destroy(this.gameObject);
        }
    }
+}
+
+public enum EstadoDoboss1
+{
+    estado1, estado2
 }
