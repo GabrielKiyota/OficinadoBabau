@@ -10,6 +10,10 @@ public class player : MonoBehaviour
     public Transform pontoDeDisparoA; // Ponto de origem do disparo
     public GameObject projetilPrefabB; // Prefab do objeto a ser disparado
     public Transform pontoDeDisparoB; // Ponto de origem do disparo
+    public float cooldownEntreTiros = 1.0f;
+    public float tempoUltimoTiroA = 0.0f;
+    public float tempoUltimoTiroB = 0.0f;
+
     void Update()
     {
         // Obtém os inputs de movimentação
@@ -24,45 +28,64 @@ public class player : MonoBehaviour
 
         // Move o personagem
         transform.Translate(movimento * velocidade * Time.deltaTime);
-        if (Input.GetKeyDown(KeyCode.J))
+
+        if (Input.GetKeyDown(KeyCode.J) && PodeAtirarA())
         {
             DispararA();
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K) && PodeAtirarB())
         {
             DispararB();
         }
     }
-void DispararA()
-{
-    // Certifique-se de que o prefab do objeto a ser disparado está configurado no Inspector
-    if (projetilPrefabA != null && pontoDeDisparoA != null)
-    {
-        // Crie uma cópia do objeto a ser disparado no ponto de disparo
-        GameObject projetil = Instantiate(projetilPrefabA, pontoDeDisparoA.position, pontoDeDisparoA.rotation);
 
-        // Adicione velocidade ao projetil (ajuste conforme necessário)
-        Rigidbody2D rb = projetil.GetComponent<Rigidbody2D>();
-        if (rb != null)
+
+    bool PodeAtirarA()
+    {
+        // Verifica se o tempo desde o último tiro é maior ou igual ao cooldown
+        return Time.time - tempoUltimoTiroA >= cooldownEntreTiros;
+    }
+    bool PodeAtirarB()
+    {
+        // Verifica se o tempo desde o último tiro é maior ou igual ao cooldown
+        return Time.time - tempoUltimoTiroB >= cooldownEntreTiros;
+    }
+
+    void DispararA()
+    {
+        if (projetilPrefabA != null && pontoDeDisparoA != null)
         {
-            rb.velocity = transform.up * velocidadeDoProjetil; // Define a direção e velocidade do projetil
+            // Cria uma cópia do objeto a ser disparado no ponto de disparo
+            GameObject projetil = Instantiate(projetilPrefabA, pontoDeDisparoA.position, pontoDeDisparoA.rotation);
+
+            // Adicione velocidade ao projetil (ajuste conforme necessário)
+            Rigidbody2D rb = projetil.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = transform.up * velocidadeDoProjetil; // Define a direção e velocidade do projetil
+            }
+
+            // Registra o tempo do último tiro
+            tempoUltimoTiroA = Time.time;
         }
     }
-}
-void DispararB()
-{
-    // Certifique-se de que o prefab do objeto a ser disparado está configurado no Inspector
-    if (projetilPrefabB != null && pontoDeDisparoB != null)
-    {
-        // Crie uma cópia do objeto a ser disparado no ponto de disparo
-        GameObject projetil = Instantiate(projetilPrefabB, pontoDeDisparoB.position, pontoDeDisparoB.rotation);
 
-        // Adicione velocidade ao projetil (ajuste conforme necessário)
-        Rigidbody2D rb = projetil.GetComponent<Rigidbody2D>();
-        if (rb != null)
+    void DispararB()
+    {
+        if (projetilPrefabB != null && pontoDeDisparoB != null)
         {
-            rb.velocity = transform.up * velocidadeDoProjetil; // Define a direção e velocidade do projetil
+            // Cria uma cópia do objeto a ser disparado no ponto de disparo
+            GameObject projetil = Instantiate(projetilPrefabB, pontoDeDisparoB.position, pontoDeDisparoB.rotation);
+
+            // Adicione velocidade ao projetil (ajuste conforme necessário)
+            Rigidbody2D rb = projetil.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = transform.up * velocidadeDoProjetil; // Define a direção e velocidade do projetil
+            }
+
+            // Registra o tempo do último tiro
+            tempoUltimoTiroB = Time.time;
         }
     }
-}
 }
