@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 public class Boss1 : MonoBehaviour
 {
    public GameObject LaserDoBoss1;
@@ -17,6 +19,10 @@ public class Boss1 : MonoBehaviour
    private Transform Target;
 
    public float tempoAtualDosLasers;
+
+   public AudioSource Leser;
+
+   public Image barraDeVida;
    // Start is called before the first frame update
    void Start()
    {
@@ -66,7 +72,7 @@ public class Boss1 : MonoBehaviour
            tempoAtualDosLasers = tempoMaximoEntreOsLasers;
            
            Instantiate(LaserDoBoss1, localdodisparo2.position, Quaternion.Euler(0f, 0f, 90f));
-           
+           Leser.Play();
        }
    }
 
@@ -78,6 +84,7 @@ public class Boss1 : MonoBehaviour
        {
            atual = EstadoDoboss1.estado2;
        }
+       barraDeVida.fillAmount = vidaAtualDoBoss1 / vidaMaximaDoBoss1;
 
        if(vidaAtualDoBoss1 <= 0)
        {
