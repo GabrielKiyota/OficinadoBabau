@@ -1,0 +1,694 @@
+fileFormatVersion: 2
+guid: 0d863ef4d1a06e545ab0f686f7da0ba3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 977
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d44d4658f3a3cc443a1530e9d0fff8d5
+      internalID: 152735828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_1
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 977
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5374a72359d25ba47aa70b0a26bc0867
+      internalID: -1226102859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_2
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 977
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe8fce657843244188c74572b755a43
+      internalID: -525304439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_3
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 977
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13c6c8def42a2c24cad1196f1542b4e0
+      internalID: 1766829375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_4
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 977
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 400ffc978ec6e7d4c8e095ef4b0acb08
+      internalID: -958468716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_5
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 785
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24efbfd940cae1449b5911233372382c
+      internalID: -2088370240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_6
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 785
+        width: 186
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e1105eae427bf49a01d1ed7afed98d
+      internalID: -262858725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_7
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 785
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16caac59e96dfed4db00b5d045b26790
+      internalID: -1836201162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_8
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 785
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1334deaf2adb95419ebc0795ece075d
+      internalID: 1300092828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_9
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 785
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d138d43911262489ff7f4730e162e3
+      internalID: -1836799644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_10
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 593
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0653f3732315f994b80eaf3369a767e1
+      internalID: 1223668411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_11
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 593
+        width: 186
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6adac2f60093e1449402523d5cc75a6
+      internalID: 1821829942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_12
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 593
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94c20d5153305464983dd23367a2e225
+      internalID: -745685245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_13
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 593
+        width: 186
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f476ee2209bd8744adbca3faa257120
+      internalID: 1133398401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_14
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 593
+        width: 186
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e400ca76fc7163489125fe0e140b541
+      internalID: -870998856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_15
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 401
+        width: 186
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc21b1d91d576441ab2f467560632bc
+      internalID: -2032517067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_16
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 401
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb25422c3669c846aefcf4c85906ba8
+      internalID: 722627988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_17
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 401
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7ec6f0f19459f499cd94798efb4cf9
+      internalID: 359168361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_18
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 401
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d07f1895034b4f48ba8583405f2440a
+      internalID: 1237918909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_19
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 401
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1086921d3eae7fa4e9088452cbb3c771
+      internalID: 1509159636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_20
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 209
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88fd3e72785f01c4fa79579c858fbefa
+      internalID: 1433694276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_21
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 209
+        width: 188
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1317b2bea6191b84395812ea53d7645a
+      internalID: -872988051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_22
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 209
+        width: 186
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 620478eab2e187446b18181c2e9cb642
+      internalID: -1498120023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_23
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 209
+        width: 186
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c105f7e54218fb42892e2de16f8ae5c
+      internalID: 978891270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_24
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 209
+        width: 186
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ecef23a64fbae4db790a10f78a13c5
+      internalID: -1691777165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LVGames RPG Sheet Beam Blue 0001 26frames (1)_25
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 17
+        width: 186
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9377f1c1b07b82f47a2ca46e9d4ed5a4
+      internalID: 569795364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_24: -1691777165
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_25: 569795364
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_8: 1300092828
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_7: -1836201162
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_11: 1821829942
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_17: 359168361
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_9: -1836799644
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_12: -745685245
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_21: -872988051
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_4: -958468716
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_15: -2032517067
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_14: -870998856
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_20: 1433694276
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_3: 1766829375
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_1: -1226102859
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_23: 978891270
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_13: 1133398401
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_0: 152735828
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_10: 1223668411
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_19: 1509159636
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_22: -1498120023
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_2: -525304439
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_16: 722627988
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_5: -2088370240
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_6: -262858725
+      LVGames RPG Sheet Beam Blue 0001 26frames (1)_18: 1237918909
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
