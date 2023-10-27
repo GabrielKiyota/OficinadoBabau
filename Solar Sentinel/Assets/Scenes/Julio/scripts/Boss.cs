@@ -1,22 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
     public EstadosBoss3 estadoAtual;
-    public float Speed;
-    public float tempoEntreTiros = 3f;
-    public float velocidadeDoTiro = 3f;
-    public GameObject tiroPrefab;
+    public float vidaMaxima = 100f;
+    public float vidaAtual = 100f;
+    public float limiteTransicaoEstado2 = 50f;
 
     Transform player;
-    float tempoUltimoTiro;
-    Animator anim;
+    public float Speed;
+
+    public GameObject prefabAInstanciar; // Arraste o prefab que você deseja instanciar para esse campo no Unity Inspector.
+    public Transform firepoint;
+    public Transform firepoint2; // Arraste o segundo objeto "firepoint" para esse campo no Unity Inspector.
+                                 // Arraste o objeto "firepoint" para esse campo no Unity Inspector.
+    public float intervaloDeInstanciacao = 5.0f;
+    private float tempoPassadoDesdeInstanciacao = 0.0f;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        tempoUltimoTiro = Time.time;
-        anim = GetComponent<Animator>(); // Adiciona esta linha para obter o componente Animator
     }
 
     void Update()
@@ -24,8 +29,12 @@ public class Boss : MonoBehaviour
         if (estadoAtual == EstadosBoss3.estado1)
         {
             Update1();
+            if (vidaAtual <= limiteTransicaoEstado2)
+            {
+                estadoAtual = EstadosBoss3.estado2;
+            }
         }
-        else if (estadoAtual == EstadosBoss3.estado2)
+        if (estadoAtual == EstadosBoss3.estado2)
         {
             Update2();
         }
@@ -33,33 +42,42 @@ public class Boss : MonoBehaviour
 
     void Update1()
     {
+        // Movimentação
         Vector3 TargetPosition = player.position;
         TargetPosition.Set(TargetPosition.x, transform.position.y, transform.position.z);
         transform.position = Vector3.Lerp(transform.position, TargetPosition, Speed / 100);
 
-        if (Time.time - tempoUltimoTiro > tempoEntreTiros)
+        // Ataque
+        tempoPassadoDesdeInstanciacao += Time.deltaTime;
+
+        if (tempoPassadoDesdeInstanciacao >= intervaloDeInstanciacao)
         {
-            // Ativa a animação "attack"
-            anim.SetTrigger("Attack");
+            // Rotação desejada (90 graus em torno do eixo Z)
+            Quaternion rotation = Quaternion.Euler(0, 0, 90);
 
-            GameObject novoTiro = Instantiate(tiroPrefab, transform.position, Quaternion.identity);
-            Rigidbody tiroRigidbody = novoTiro.GetComponent<Rigidbody>();
-            tiroRigidbody.velocity = transform.forward * velocidadeDoTiro;
+            // Instancia o prefab no primeiro "firepoint" com a rotação especificada
+            if (prefabAInstanciar != null && firepoint != null)
+            {
+                Instantiate(prefabAInstanciar, firepoint.position, rotation);
+            }
 
-            // Destroi o tiro após 2 segundos
-            Destroy(novoTiro, 2f);
+            // Instancia o prefab no segundo "firepoint" com a mesma rotação
+            if (prefabAInstanciar != null && firepoint2 != null)
+            {
+                Instantiate(prefabAInstanciar, firepoint2.position, rotation);
+            }
 
-            tempoUltimoTiro = Time.time;  // Atualiza o tempo do último tiro
+            tempoPassadoDesdeInstanciacao = 0.0f;
         }
     }
 
     void Update2()
     {
-        // Implemente o comportamento para o estado2, se necessário
+        // Implemente o comportamento do estado2 aqui.
     }
-}
 
-public enum EstadosBoss3
-{
-    estado1, estado2
+    public enum EstadosBoss3
+    {
+        estado1, estado2
+    }
 }
