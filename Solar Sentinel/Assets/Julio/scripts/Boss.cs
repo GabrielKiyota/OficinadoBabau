@@ -19,11 +19,12 @@ public class Boss : MonoBehaviour
     public float intervaloDeInstanciacao = 5.0f;
     private float tempoPassadoDesdeInstanciacao = 0.0f;
 
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-
+    
     void Update()
     {
         if (estadoAtual == EstadosBoss3.estado1)

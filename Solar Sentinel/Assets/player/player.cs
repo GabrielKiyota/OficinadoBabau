@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class player : MonoBehaviour
 {
 
     public string danoInimigo;
@@ -78,6 +78,8 @@ public class Player : MonoBehaviour
            
 
     }
+
+
 void DispararA()
 {
     if (projetilPrefabA != null && pontoDeDisparoA != null)
