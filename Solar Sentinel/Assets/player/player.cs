@@ -2,90 +2,118 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    public float velocidade = 5.0f; // Velocidade de movimento do personagem
-    public float velocidadeDoProjetil = 5.0f;
-    public GameObject projetilPrefabA; // Prefab do objeto a ser disparado
-    public Transform pontoDeDisparoA; // Ponto de origem do disparo
-    public GameObject projetilPrefabB; // Prefab do objeto a ser disparado
-    public Transform pontoDeDisparoB; // Ponto de origem do disparo
-    public float cooldownEntreTiros = 1.0f;
-    public float tempoUltimoTiroA = 0.0f;
-    public float tempoUltimoTiroB = 0.0f;
 
+    public string danoInimigo;
+    public int vida = 3;
+    public float velocidade = 5.0f;
+    public float velocidadeDoProjetil = 5.0f;
+    public GameObject projetilPrefabA;
+    public Transform pontoDeDisparoA; 
+    public GameObject projetilPrefabB;
+    public Transform pontoDeDisparoB; 
+    private float tempoA;
+    private float tempoB;
+    public Animator anim;
+    private float tempoMortal;
+    private bool vivencia;
+    public SpriteRenderer sprite;
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+
+    }
     void Update()
     {
-        // Obtém os inputs de movimentação
+        tempoMortal = tempoMortal + Time.deltaTime;
+        tempoA = tempoA + Time.deltaTime;
+        tempoB = tempoB + Time.deltaTime;
+
         float movimentoHorizontal = Input.GetAxis("Horizontal");
         float movimentoVertical = Input.GetAxis("Vertical");
 
-        // Calcula o vetor de movimentação
         Vector3 movimento = new Vector3(movimentoHorizontal, movimentoVertical, 0.0f);
 
-        // Normaliza o vetor de movimentação para evitar movimentos diagonais mais rápidos
         movimento.Normalize();
 
-        // Move o personagem
         transform.Translate(movimento * velocidade * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.J) && PodeAtirarA())
+        if (Input.GetKeyDown(KeyCode.J) && tempoA >= 1)
         {
             DispararA();
+            tempoA = 0f;
         }
-        if (Input.GetKeyDown(KeyCode.K) && PodeAtirarB())
+        if (Input.GetKeyDown(KeyCode.K) && tempoB >= 1)
         {
             DispararB();
+            tempoB = 0f;
+
         }
-    }
-
-
-    bool PodeAtirarA()
-    {
-        // Verifica se o tempo desde o último tiro é maior ou igual ao cooldown
-        return Time.time - tempoUltimoTiroA >= cooldownEntreTiros;
-    }
-    bool PodeAtirarB()
-    {
-        // Verifica se o tempo desde o último tiro é maior ou igual ao cooldown
-        return Time.time - tempoUltimoTiroB >= cooldownEntreTiros;
-    }
-
-    void DispararA()
-    {
-        if (projetilPrefabA != null && pontoDeDisparoA != null)
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            // Cria uma cópia do objeto a ser disparado no ponto de disparo
-            GameObject projetil = Instantiate(projetilPrefabA, pontoDeDisparoA.position, pontoDeDisparoA.rotation);
-
-            // Adicione velocidade ao projetil (ajuste conforme necessário)
-            Rigidbody2D rb = projetil.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.velocity = transform.up * velocidadeDoProjetil; // Define a direção e velocidade do projetil
-            }
-
-            // Registra o tempo do último tiro
-            tempoUltimoTiroA = Time.time;
+            // Define o par�metro "A_Pressed" como verdadeiro
+            anim.SetBool("FoiA", true);
         }
-    }
-
-    void DispararB()
-    {
-        if (projetilPrefabB != null && pontoDeDisparoB != null)
+        if (Input.GetKeyUp(KeyCode.A))
         {
-            // Cria uma cópia do objeto a ser disparado no ponto de disparo
-            GameObject projetil = Instantiate(projetilPrefabB, pontoDeDisparoB.position, pontoDeDisparoB.rotation);
+            // Define o par�metro "A_Pressed" como falso
+            anim.SetBool("FoiA", false);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            // Define o par�metro "D_Pressed" como verdadeiro
+            anim.SetBool("FoiD", true);
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            // Define o par�metro "D_Pressed" como falso
+            anim.SetBool("FoiD", false);
+        }
 
-            // Adicione velocidade ao projetil (ajuste conforme necessário)
-            Rigidbody2D rb = projetil.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.velocity = transform.up * velocidadeDoProjetil; // Define a direção e velocidade do projetil
-            }
+        if (tempoMortal >= 2)
+        {
+            vivencia = true;
+            sprite.color = new Color(1f, 1f, 1f, 1f);
+        }
+           
 
-            // Registra o tempo do último tiro
-            tempoUltimoTiroB = Time.time;
+    }
+void DispararA()
+{
+    if (projetilPrefabA != null && pontoDeDisparoA != null)
+    {
+        GameObject projetil = Instantiate(projetilPrefabA, pontoDeDisparoA.position, pontoDeDisparoA.rotation);
+
+        Rigidbody2D rb = projetil.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+                rb.velocity = transform.up * velocidadeDoProjetil;
         }
     }
+}
+void DispararB()
+{
+    if (projetilPrefabB != null && pontoDeDisparoB != null)
+    {
+        GameObject projetil = Instantiate(projetilPrefabB, pontoDeDisparoB.position, pontoDeDisparoB.rotation);
+
+        Rigidbody2D rb = projetil.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = transform.up * velocidadeDoProjetil;
+        }
+    }
+    
+}
+private void OnCollisionStay2D(Collision2D dano)
+{
+    if (dano.gameObject.tag == danoInimigo && tempoMortal >= 2 && vivencia ==  true)
+    {
+        vida = vida - 1;
+        vivencia = false;
+        tempoMortal = 0;
+        sprite.color = new Color(1f, 0, 0, 1f);
+    }
+
+}
 }
