@@ -12,19 +12,22 @@ public class Boss : MonoBehaviour
     Transform player;
     public float Speed;
 
-    public GameObject prefabAInstanciar; // Arraste o prefab que você deseja instanciar para esse campo no Unity Inspector.
+    public GameObject prefabAInstanciar;
     public Transform firepoint;
-    public Transform firepoint2; // Arraste o segundo objeto "firepoint" para esse campo no Unity Inspector.
-                                 // Arraste o objeto "firepoint" para esse campo no Unity Inspector.
-    public float intervaloDeInstanciacao = 5.0f;
+    public Transform firepoint2;
+
+    public float intervaloDeInstanciacao = 2.0f;
     private float tempoPassadoDesdeInstanciacao = 0.0f;
 
+    public Animator anim;
+    private bool podeAtacar = true;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        anim = GetComponent <Animator>();
     }
-    
+
     void Update()
     {
         if (estadoAtual == EstadosBoss3.estado1)
@@ -47,29 +50,43 @@ public class Boss : MonoBehaviour
         Vector3 TargetPosition = player.position;
         TargetPosition.Set(TargetPosition.x, transform.position.y, transform.position.z);
         transform.position = Vector3.Lerp(transform.position, TargetPosition, Speed / 100);
+        anim.SetInteger("transition", 0);
 
-        // Ataque
         tempoPassadoDesdeInstanciacao += Time.deltaTime;
 
-        if (tempoPassadoDesdeInstanciacao >= intervaloDeInstanciacao)
+        // Verifica se pode atacar novamente com base no intervalo de instânciação
+        if (tempoPassadoDesdeInstanciacao >= intervaloDeInstanciacao && podeAtacar)
         {
-            // Rotação desejada (90 graus em torno do eixo Z)
-            Quaternion rotation = Quaternion.Euler(0, 0, 90);
-
-            // Instancia o prefab no primeiro "firepoint" com a rotação especificada
-            if (prefabAInstanciar != null && firepoint != null)
-            {
-                Instantiate(prefabAInstanciar, firepoint.position, rotation);
-            }
-
-            // Instancia o prefab no segundo "firepoint" com a mesma rotação
-            if (prefabAInstanciar != null && firepoint2 != null)
-            {
-                Instantiate(prefabAInstanciar, firepoint2.position, rotation);
-            }
-
-            tempoPassadoDesdeInstanciacao = 0.0f;
+            ataque();
+            anim.SetInteger("transition", 1);
         }
+    }
+
+    void ataque()
+    {
+        // Ataque
+        Quaternion rotation = Quaternion.Euler(0, 0, 90);
+
+        if (prefabAInstanciar != null && firepoint != null)
+        {
+            Instantiate(prefabAInstanciar, firepoint.position, rotation);
+        }
+
+        if (prefabAInstanciar != null && firepoint2 != null)
+        {
+            Instantiate(prefabAInstanciar, firepoint2.position, rotation);
+        }
+
+        // Reseta o tempo desde a última instânciação e impede mais ataques até o intervalo terminar
+        tempoPassadoDesdeInstanciacao = 0.0f;
+        podeAtacar = false;
+        StartCoroutine(PermitirAtacarNovamente());
+    }
+
+    IEnumerator PermitirAtacarNovamente()
+    {
+        yield return new WaitForSeconds(intervaloDeInstanciacao);
+        podeAtacar = true; // Permite atacar novamente
     }
 
     void Update2()

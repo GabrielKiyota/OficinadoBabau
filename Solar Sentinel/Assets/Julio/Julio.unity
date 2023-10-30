@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 960e77a30a110ae44a4db3874fdfb8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeDocenario: 0.05
+  velocidadeDocenario: 0.11
 --- !u!23 &323305004
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -479,7 +479,8 @@ MonoBehaviour:
   prefabAInstanciar: {fileID: 8874366506998304036, guid: 894608a4fdc98d448bd7c31ca6dc6aa2, type: 3}
   firepoint: {fileID: 1860493290}
   firepoint2: {fileID: 1864224975}
-  intervaloDeInstanciacao: 5
+  intervaloDeInstanciacao: 2
+  anim: {fileID: 419082058}
 --- !u!61 &419082062
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -781,7 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 960e77a30a110ae44a4db3874fdfb8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeDocenario: 0.05
+  velocidadeDocenario: 0.11
 --- !u!23 &1089784643
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -893,7 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 960e77a30a110ae44a4db3874fdfb8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeDocenario: 0.05
+  velocidadeDocenario: 0.11
 --- !u!64 &1142086172
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1093,7 +1094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 960e77a30a110ae44a4db3874fdfb8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeDocenario: 0.05
+  velocidadeDocenario: 0.11
 --- !u!23 &1329179181
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1435,7 +1436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 960e77a30a110ae44a4db3874fdfb8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeDocenario: 0.05
+  velocidadeDocenario: 0.11
 --- !u!23 &2117623951
 MeshRenderer:
   m_ObjectHideFlags: 0
