@@ -13,7 +13,7 @@ public class Bala : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D baleta)
     {
-        if (baleta.CompareTag("Inimigo"))
+        if (baleta.CompareTag("Enemy"))
         {
             Destroy(gameObject);
         }
