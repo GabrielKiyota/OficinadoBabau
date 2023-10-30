@@ -450,7 +450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419082057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.41, y: 2.64, z: 0}
+  m_LocalPosition: {x: -1.41, y: 2.49, z: 0}
   m_LocalScale: {x: 0.9955, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -481,6 +481,7 @@ MonoBehaviour:
   firepoint2: {fileID: 1864224975}
   intervaloDeInstanciacao: 2
   anim: {fileID: 419082058}
+  vida: {fileID: 1517404120}
 --- !u!61 &419082062
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -491,7 +492,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.05610946, y: 0.36469126}
@@ -1174,6 +1175,17 @@ Transform:
   m_Father: {fileID: 1142086175}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1517404120 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8846217991837880386, guid: 42cd42427bdf9604f8640d96c2f855d0, type: 3}
+  m_PrefabInstance: {fileID: 2043795130}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d5e1e201c43c14bb23ff13762453fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1535536304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,9 +1366,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8846217991837880386, guid: 42cd42427bdf9604f8640d96c2f855d0, type: 3}
+      propertyPath: vida
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8846217991837880387, guid: 42cd42427bdf9604f8640d96c2f855d0, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846217991837880388, guid: 42cd42427bdf9604f8640d96c2f855d0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8846217991837880390, guid: 42cd42427bdf9604f8640d96c2f855d0, type: 3}
       propertyPath: m_RootOrder

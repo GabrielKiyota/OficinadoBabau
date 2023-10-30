@@ -6,7 +6,7 @@ public class player : MonoBehaviour
 {
 
     public string danoInimigo;
-    public int vida = 3;
+    public int vida ;
     public float velocidade = 5.0f;
     public float velocidadeDoProjetil = 5.0f;
     public GameObject projetilPrefabA;

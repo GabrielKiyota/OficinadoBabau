@@ -22,6 +22,16 @@ public class Boss : MonoBehaviour
     public Animator anim;
     private bool podeAtacar = true;
 
+    public player vida;
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            vida.vida = vida.vida - 1;
+        }
+    }
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -93,7 +103,11 @@ public class Boss : MonoBehaviour
     {
         // Implemente o comportamento do estado2 aqui.
     }
-
+    
+    public void Damage(int dmg)
+    {
+        vidaAtual -= dmg;
+    }
     public enum EstadosBoss3
     {
         estado1, estado2
