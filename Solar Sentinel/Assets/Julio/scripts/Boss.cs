@@ -5,7 +5,6 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     public EstadosBoss3 estadoAtual;
-    public float vidaMaxima = 100f;
     public float vidaAtual = 100f;
     public float limiteTransicaoEstado2 = 50f;
 
@@ -20,7 +19,8 @@ public class Boss : MonoBehaviour
     private float tempoPassadoDesdeInstanciacao = 0.0f;
 
     public Animator anim;
-    private bool podeAtacar = true;
+
+    private int animState = 0; // Inicialmente, o estado é 0
 
     public player vida;
 
@@ -35,7 +35,7 @@ public class Boss : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        anim = GetComponent <Animator>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -60,22 +60,27 @@ public class Boss : MonoBehaviour
         Vector3 TargetPosition = player.position;
         TargetPosition.Set(TargetPosition.x, transform.position.y, transform.position.z);
         transform.position = Vector3.Lerp(transform.position, TargetPosition, Speed / 100);
-        anim.SetInteger("transition", 0);
 
         tempoPassadoDesdeInstanciacao += Time.deltaTime;
 
         // Verifica se pode atacar novamente com base no intervalo de instânciação
-        if (tempoPassadoDesdeInstanciacao >= intervaloDeInstanciacao && podeAtacar)
+        if (tempoPassadoDesdeInstanciacao >= intervaloDeInstanciacao)
         {
             ataque();
-            anim.SetInteger("transition", 1);
+            
+
         }
+
+        // Define o estado da animação com base em animState
+        anim.SetInteger("transition", animState);
     }
 
+    
+    
     void ataque()
     {
         // Ataque
-        Quaternion rotation = Quaternion.Euler(0, 0, 90);
+        Quaternion rotation = Quaternion.Euler(0, 0, 180);
 
         if (prefabAInstanciar != null && firepoint != null)
         {
@@ -87,27 +92,35 @@ public class Boss : MonoBehaviour
             Instantiate(prefabAInstanciar, firepoint2.position, rotation);
         }
 
-        // Reseta o tempo desde a última instânciação e impede mais ataques até o intervalo terminar
+        // Defina o estado da animação para 1
+        animState = 1;
+
+        // Reseta o tempo desde a última instânciação
         tempoPassadoDesdeInstanciacao = 0.0f;
-        podeAtacar = false;
-        StartCoroutine(PermitirAtacarNovamente());
+
+        // Agora, após o ataque, defina o estado da animação de volta para 0
+        StartCoroutine(RetornarAnimacaoAoEstado0());
     }
 
-    IEnumerator PermitirAtacarNovamente()
+    IEnumerator RetornarAnimacaoAoEstado0()
     {
-        yield return new WaitForSeconds(intervaloDeInstanciacao);
-        podeAtacar = true; // Permite atacar novamente
+        // Espere um curto período de tempo (por exemplo, 1 segundo) antes de definir animState para 0.
+        yield return new WaitForSeconds(1.1f);
+
+        animState = 0;
     }
+
 
     void Update2()
     {
         // Implemente o comportamento do estado2 aqui.
     }
-    
+
     public void Damage(int dmg)
     {
         vidaAtual -= dmg;
     }
+
     public enum EstadosBoss3
     {
         estado1, estado2

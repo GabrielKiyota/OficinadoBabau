@@ -201,8 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d5e1e201c43c14bb23ff13762453fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  danoInimigo: 
-  vida: 3
+  danoInimigo: 1
+  vida: 5
   velocidade: 5
   velocidadeDoProjetil: 5
   projetilPrefabA: {fileID: 3470542353038517439, guid: 0c9e6549e1f012446b4dbe7bce507225, type: 3}

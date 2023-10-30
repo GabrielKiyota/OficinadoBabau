@@ -3,12 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - danoInimigo
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - parede
   - Water
   - UI
   - 
