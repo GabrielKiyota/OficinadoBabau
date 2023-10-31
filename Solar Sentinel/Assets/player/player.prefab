@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d5e1e201c43c14bb23ff13762453fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  danoInimigo: 1
+  danoInimigo: 
   vida: 5
   velocidade: 5
   velocidadeDoProjetil: 5

@@ -118,4 +118,9 @@ private void OnCollisionStay2D(Collision2D dano)
     }
 
 }
+    public void damage1(int dmg)
+    {
+        vida =vida-1;
+
+    }
 }
