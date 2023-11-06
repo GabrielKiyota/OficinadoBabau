@@ -36,7 +36,7 @@ public class LaserDoBoss1 : MonoBehaviour
         {
             if (collision.gameObject.tag == "Player")
             {
-                collision.GetComponent<PlayerPrefs>().AtirarLaser(damage);
+               // collision.GetComponent<Player>().vida -= 1;
                 Destroy(gameObject);
             }
         }
