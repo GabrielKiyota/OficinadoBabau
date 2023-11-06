@@ -23,6 +23,7 @@ public class Boss1 : MonoBehaviour
    public AudioSource Leser;
 
    public Image barraDeVida;
+   
    // Start is called before the first frame update
    void Start()
    {
