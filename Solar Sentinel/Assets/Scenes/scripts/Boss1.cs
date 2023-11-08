@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +24,9 @@ public class Boss1 : MonoBehaviour
    public AudioSource Leser;
 
    public Image barraDeVida;
+   
+   public TextMeshProUGUI contadordevida;
+   
    // Start is called before the first frame update
    void Start()
    {
@@ -33,7 +37,8 @@ public class Boss1 : MonoBehaviour
    // Update is called once per frame
    void Update()
    {
-       if (atual == EstadoDoboss1.estado1)
+       contadordevida.text = $"vida: {vidaAtualDoBoss1}";
+        if (atual == EstadoDoboss1.estado1)
        {
            UpdateEstado1();
        }
