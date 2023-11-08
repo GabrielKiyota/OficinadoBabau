@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -80,6 +81,16 @@ public class Boss1 : MonoBehaviour
            Leser.Play();
        }
    }
+
+   public void OnCollisionEnter2D(Collision2D collision)
+   {
+       if (collision.gameObject.tag == "bala")
+       {
+           vidaAtualDoBoss1 = vidaAtualDoBoss1 - 1;
+           
+       }
+   }
+
 
    public void MachucarBoss1(int danoParaReceber)
    {
