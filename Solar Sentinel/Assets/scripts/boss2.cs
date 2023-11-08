@@ -41,7 +41,7 @@ public class boss2 : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
             rig.velocity = Vector2.left * speed;
-        }
-
+        } 
+         
     }
 } 

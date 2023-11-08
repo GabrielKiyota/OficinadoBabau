@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5f9d99fa-923e-4d66-a953-4f56ae42e1fc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Solar Sentinel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Solar Sentinel/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/boss-raissa.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/boss-raissa.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/boss2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/boss2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/boss2.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/boss2.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animations.2/boss/boss2.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/animations.2/boss/boss2.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/boss2.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/boss2.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/scripts/boss2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/boss2.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +103,7 @@
       <workItem from="1695663509084" duration="2788000" />
       <workItem from="1698761462503" duration="2571000" />
       <workItem from="1699376096766" duration="1533000" />
-      <workItem from="1699447674594" duration="5103000" />
+      <workItem from="1699447674594" duration="6589000" />
     </task>
     <servers />
   </component>
