@@ -16,19 +16,20 @@ public class Boss : MonoBehaviour
     public Transform firepoint2;
 
     public float intervaloDeInstanciacao = 2.0f;
+    public float intervaloanimat = 2.5f;
     private float tempoPassadoDesdeInstanciacao = 0.0f;
 
     public Animator anim;
 
     private int animState = 0; // Inicialmente, o estado é 0
 
-    public player vida;
+    public Player vida;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "bala")
         {
-            vida.vida = vida.vida - 1;
+            vidaAtual = vidaAtual- 1;
         }
     }
 
@@ -51,6 +52,12 @@ public class Boss : MonoBehaviour
         if (estadoAtual == EstadosBoss3.estado2)
         {
             Update2();
+
+            if (vidaAtual <= 0)
+            {
+                animState = 2;
+                anim.SetInteger("transition", animState);
+            }
         }
     }
 
@@ -68,38 +75,49 @@ public class Boss : MonoBehaviour
         {
             ataque();
             
-
         }
+
+        if(tempoPassadoDesdeInstanciacao >= intervaloanimat)
+        {
+            animat();
+        }
+
+
 
         // Define o estado da animação com base em animState
         anim.SetInteger("transition", animState);
     }
 
     
-    
+    void animat()
+    {
+        animState = 1;
+        anim.SetInteger("transition", animState);
+        StartCoroutine(RetornarAnimacaoAoEstado0());
+
+    }
     void ataque()
     {
-        // Ataque
-        Quaternion rotation = Quaternion.Euler(0, 0, 180);
+
 
         if (prefabAInstanciar != null && firepoint != null)
         {
+            Quaternion rotation = Quaternion.Euler(0, 0, 190);
             Instantiate(prefabAInstanciar, firepoint.position, rotation);
         }
 
         if (prefabAInstanciar != null && firepoint2 != null)
         {
+            Quaternion rotation = Quaternion.Euler(0, 0, 170);
             Instantiate(prefabAInstanciar, firepoint2.position, rotation);
         }
 
-        // Defina o estado da animação para 1
-        animState = 1;
 
         // Reseta o tempo desde a última instânciação
         tempoPassadoDesdeInstanciacao = 0.0f;
 
         // Agora, após o ataque, defina o estado da animação de volta para 0
-        StartCoroutine(RetornarAnimacaoAoEstado0());
+       
     }
 
     IEnumerator RetornarAnimacaoAoEstado0()
@@ -113,7 +131,7 @@ public class Boss : MonoBehaviour
 
     void Update2()
     {
-        // Implemente o comportamento do estado2 aqui.
+       
     }
 
     public void Damage(int dmg)

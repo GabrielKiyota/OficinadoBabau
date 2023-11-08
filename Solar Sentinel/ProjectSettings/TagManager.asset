@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - danoInimigo
+  - Inimigo
+  - enemy
+  - bala
   layers:
   - Default
   - TransparentFX
