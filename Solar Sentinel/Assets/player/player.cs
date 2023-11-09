@@ -21,6 +21,17 @@ public class Player : MonoBehaviour
     private bool vivencia;
     public SpriteRenderer sprite;
     public bool morreu;
+    public bool ultimoMoveA;
+
+    public bool ultimoMoveD;
+
+    private float tempoDash = 0.5f;
+    private bool noDash = false;
+
+    public bool matouBoss1;
+    public bool matouBoss2;
+
+
 
     public Text vidaText;
     public Text BalaA;
@@ -36,8 +47,7 @@ public class Player : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         Tiro = GetComponent<AudioSource>();
-
-
+        velocidade = 5f;
     }
     void Update()
     {
@@ -53,38 +63,40 @@ public class Player : MonoBehaviour
         movimento.Normalize();
 
         transform.Translate(movimento * velocidade * Time.deltaTime);
+
         if (Input.GetKeyDown(KeyCode.J) && tempoA >= 1 && vida > 0)
         {
             DispararA();
             tempoA = 0f;
-            
-
         }
+
         if (Input.GetKeyDown(KeyCode.K) && tempoB >= 1 && vida > 0)
         {
             DispararB();
             tempoB = 0f;
-            
+        }
 
-        }
-        if (Input.GetKeyDown(KeyCode.A) && vida  >0)
+        if (Input.GetKeyDown(KeyCode.A) && vida > 0)
         {
-            // Define o par�metro "A_Pressed" como verdadeiro
             anim.SetBool("FoiA", true);
+            ultimoMoveA = true;
+            ultimoMoveD = false;
         }
+
         if (Input.GetKeyUp(KeyCode.A) && vida > 0)
         {
-            // Define o par�metro "A_Pressed" como falso
             anim.SetBool("FoiA", false);
         }
+
         if (Input.GetKeyDown(KeyCode.D) && vida > 0)
         {
-            // Define o par�metro "D_Pressed" como verdadeiro
             anim.SetBool("FoiD", true);
+            ultimoMoveA = false;
+            ultimoMoveD = true;
         }
+
         if (Input.GetKeyUp(KeyCode.D) && vida > 0)
         {
-            // Define o par�metro "D_Pressed" como falso
             anim.SetBool("FoiD", false);
         }
 
@@ -100,13 +112,10 @@ public class Player : MonoBehaviour
             velocidade = 0;
             morreu = true;
             MostrarTelaDeMorte();
-
-
         }
 
-
         vidaText.text = "Vida: " + vida;
-        if(tempoA >= 1f)
+        if (tempoA >= 1f)
         {
             BalaA.text = "PodeAtirAr";
         }
@@ -123,9 +132,31 @@ public class Player : MonoBehaviour
             BalaB.text = "BarreBanBo";
         }
 
+        if (Input.GetKeyDown(KeyCode.L) && vida > 0 ) // Verifica se a tecla L foi pressionada e se o jogador derrotou um dos chefes
+        {
+            if (ultimoMoveA)
+            {
+                DashEsquerda();
+            }
+            else if (ultimoMoveD)
+            {
+                DashDireita();
+            }
+        }
 
+        if (noDash)
+        {
+            if (ultimoMoveA)
+            {
+                transform.Translate(Vector3.left * velocidade * Time.deltaTime * 2);
+            }
+            else if (ultimoMoveD)
+            {
+                transform.Translate(Vector3.right * velocidade * Time.deltaTime * 2);
+            }
+        }
     }
-void DispararA()
+    void DispararA()
 {
     if (projetilPrefabA != null && pontoDeDisparoA != null)
     {
@@ -178,6 +209,30 @@ private void OnCollisionStay2D(Collision2D dano)
 
             anim.SetTrigger("MORREU");
             
+    }
+    private void DashEsquerda()
+    {
+        if (!noDash)
+        {
+            StartCoroutine(ExecutarDash(Vector3.left));
+        }
+    }
+
+    private void DashDireita()
+    {
+        if (!noDash)
+        {
+            StartCoroutine(ExecutarDash(Vector3.right));
+        }
+    }
+
+    private IEnumerator ExecutarDash(Vector3 direcao)
+    {
+        noDash = true;
+
+        yield return new WaitForSeconds(tempoDash);
+
+       noDash = false;
     }
 
 }
