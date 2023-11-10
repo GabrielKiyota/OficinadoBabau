@@ -25,17 +25,24 @@ public class Player : MonoBehaviour
 
     public bool ultimoMoveD;
 
-    private float tempoDash = 0.5f;
+    private float tempoDash = 0.2f;
     private bool noDash = false;
+    private float tempoParaDash;
 
     public bool matouBoss1;
     public bool matouBoss2;
+    public float tempoLimiteRaioAtivo = 2f;
+    private bool raiolaserAtivo = false;
 
-
+    public float raiosando;
+    public RaioLaser raioLaser;
+    public AudioSource bazinga;
 
     public Text vidaText;
     public Text BalaA;
     public Text BalaB;
+    public Text Dash;
+    public Text Raio;
 
     public AudioSource Tiro;
 
@@ -54,6 +61,8 @@ public class Player : MonoBehaviour
         tempoMortal = tempoMortal + Time.deltaTime;
         tempoA = tempoA + Time.deltaTime;
         tempoB = tempoB + Time.deltaTime;
+        raiosando = raiosando + Time.deltaTime;
+        tempoParaDash = tempoParaDash + Time.deltaTime;
 
         float movimentoHorizontal = Input.GetAxis("Horizontal");
         float movimentoVertical = Input.GetAxis("Vertical");
@@ -63,14 +72,33 @@ public class Player : MonoBehaviour
         movimento.Normalize();
 
         transform.Translate(movimento * velocidade * Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.U) && raiosando >= 6 && !raiolaserAtivo)
+        {
+            if (raioLaser != null)
+            {
+                Debug.Log("Ativando Raio");
+                raioLaser.gameObject.SetActive(true);
+                raiosando = 0;
+                raiolaserAtivo = true;
+                bazinga.Play();
 
-        if (Input.GetKeyDown(KeyCode.J) && tempoA >= 1 && vida > 0)
+            }
+        }
+
+        if (raiosando >= tempoLimiteRaioAtivo && raiolaserAtivo)
+        {
+            Debug.Log("Desativando Raio");
+            raioLaser.gameObject.SetActive(false);
+            raiolaserAtivo = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.J) && tempoA >= 1 && vida > 0 && raiolaserAtivo == false)
         {
             DispararA();
             tempoA = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.K) && tempoB >= 1 && vida > 0)
+        if (Input.GetKeyDown(KeyCode.K) && tempoB >= 1 && vida > 0 && raiolaserAtivo == false)
         {
             DispararB();
             tempoB = 0f;
@@ -119,7 +147,7 @@ public class Player : MonoBehaviour
         {
             BalaA.text = "PodeAtirAr";
         }
-        if (tempoA <= 0f)
+        if (tempoA < 1f)
         {
             BalaA.text = "CArregAndo";
         }
@@ -127,12 +155,28 @@ public class Player : MonoBehaviour
         {
             BalaB.text = "BoBeaBirar";
         }
-        if (tempoB <= 0f)
+        if (tempoB < 1f)
         {
             BalaB.text = "BarreBanBo";
         }
+        if (tempoParaDash >= 1)
+        {
+            Dash.text = "daLsh";
+        }
+        if (tempoParaDash < 1)
+        {
+            Dash.text = "LecupeLando";
+        }
+        if (raiosando >= 10)
+        {
+            Raio.text = "pUde raiUar";
+        }
+        if (raiosando < 10)
+        {
+            Raio.text = "carrUgandU";
+        }
 
-        if (Input.GetKeyDown(KeyCode.L) && vida > 0 ) // Verifica se a tecla L foi pressionada e se o jogador derrotou um dos chefes
+        if (Input.GetKeyDown(KeyCode.L) && vida > 0 && raiolaserAtivo == false)
         {
             if (ultimoMoveA)
             {
@@ -212,17 +256,19 @@ private void OnCollisionStay2D(Collision2D dano)
     }
     private void DashEsquerda()
     {
-        if (!noDash)
+        if (!noDash && tempoParaDash >=1)
         {
             StartCoroutine(ExecutarDash(Vector3.left));
+            tempoParaDash = 0;
         }
     }
 
     private void DashDireita()
     {
-        if (!noDash)
+        if (!noDash && tempoParaDash >= 1)
         {
             StartCoroutine(ExecutarDash(Vector3.right));
+            tempoParaDash = 0;
         }
     }
 
