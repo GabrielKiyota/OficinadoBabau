@@ -154,7 +154,7 @@ void DispararB()
     }
     
 }
-private void OnCollisionStay2D(Collision2D dano)
+private void OnTriggerEnter2D (Collider2D dano)
 {
     if (dano.gameObject.tag == danoInimigo && tempoMortal >= 2 && vivencia ==  true && morreu == false)
     {

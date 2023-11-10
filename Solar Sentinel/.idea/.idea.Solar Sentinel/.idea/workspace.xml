@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7c2d39cf-7e68-44aa-be0a-98c5f742e717" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Solar Sentinel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Solar Sentinel/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/prefabs/laser do Boss1.1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/prefabs/laser do Boss1.1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/scripts/Boss1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scripts/Boss1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/player/Capsule.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/player/Capsule.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/player/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/player/player.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

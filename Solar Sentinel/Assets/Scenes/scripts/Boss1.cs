@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Boss1 : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class Boss1 : MonoBehaviour
    void Start()
    {
       Target = GameObject.FindGameObjectWithTag("Player").transform;
-       vidaAtualDoBoss1 = vidaMaximaDoBoss1;
+      vidaAtualDoBoss1 = vidaMaximaDoBoss1;
    }
 
    // Update is called once per frame
@@ -82,9 +83,9 @@ public class Boss1 : MonoBehaviour
        }
    }
 
-   public void OnCollisionEnter2D(Collision2D collision)
+   private void OnTriggerEnter2D (Collider2D dano)
    {
-       if (collision.gameObject.tag == "bala")
+       if (dano.gameObject.tag == "bala")
        {
            vidaAtualDoBoss1 = vidaAtualDoBoss1 - 1;
            
@@ -105,6 +106,7 @@ public class Boss1 : MonoBehaviour
        if(vidaAtualDoBoss1 <= 0)
        {
           Destroy(this.gameObject);
+          SceneManager.LoadScene("1");
        }
    }
 }

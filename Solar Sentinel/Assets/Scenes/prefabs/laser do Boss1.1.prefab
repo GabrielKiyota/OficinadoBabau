@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4135539933414070706}
   m_Layer: 0
   m_Name: laser do Boss1.1
-  m_TagString: Untagged
+  m_TagString: balaboss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec5e751646fa9446a31b9bf33552f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  damage: 0
   valocidadeDoLaser: 12
 --- !u!114 &4135539933414070706
 MonoBehaviour:
