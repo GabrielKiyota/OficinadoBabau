@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class boss2 : MonoBehaviour
 {
-
+    public int health;
     public float speed = 5f;
     public float walkTime = 2;
     public bool walkRight = false;
@@ -42,6 +42,30 @@ public class boss2 : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0);
             rig.velocity = Vector2.left * speed;
         } 
+        
+       
+
+        
+        
          
     }
+
+    void Damage(int dmg)
+    {
+        health -= dmg;
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Inimigo"));
+        {
+            Damage(1);
+        }
+    }
+
+        
+    
 } 
