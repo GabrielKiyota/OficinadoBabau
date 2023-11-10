@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Boss : MonoBehaviour
 {
@@ -14,6 +16,9 @@ public class Boss : MonoBehaviour
     public GameObject prefabAInstanciar;
     public Transform firepoint;
     public Transform firepoint2;
+
+    public Text VidaBoss;
+
 
     public float intervaloDeInstanciacao = 2.0f;
     public float intervaloanimat = 2.5f;
@@ -41,6 +46,16 @@ public class Boss : MonoBehaviour
 
     void Update()
     {
+        if(vidaAtual <= 0)
+        {
+            VidaBoss.text = " ";
+
+        }
+        if (vidaAtual > 0)
+        {
+            VidaBoss.text = "Vida Boss = " + vidaAtual;
+        }
+
         if (estadoAtual == EstadosBoss3.estado1)
         {
             Update1();
