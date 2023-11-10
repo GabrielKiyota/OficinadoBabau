@@ -11,9 +11,10 @@ public class Bala : MonoBehaviour
     {
 
     }
-    private void OnTriggerEnter2D(Collider2D baleta)
+    
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (baleta.CompareTag("enemy"))
+        if (collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
         }

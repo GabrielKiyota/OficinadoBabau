@@ -4,15 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Enemy
+  - danoInimigo
   - Inimigo
   - enemy
   - bala
-  - balaboss
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - parede
   - Water
   - UI
   - Telamorte
