@@ -7,47 +7,41 @@ using UnityEngine;
 public class boss2 : MonoBehaviour
 {
 
-    public float speed;
-    public float jumpForce;
+    public float speed = 5f;
+    public float walkTime = 2;
+    public bool walkRight = false;
+    
+    private float timer;
     private Rigidbody2D rig;
-    private Animator anim;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Move();
-        Jump();
-    }
+        timer += Time.deltaTime;
 
-    void Move()
-    {
-        float movement = Input.GetAxis("Horizontal");
-
-        rig.velocity = new Vector2(movement * speed, rig.velocity.y);
-
-        if (movement > 0)
+        if (timer >= walkTime)
         {
-            transform.eulerAngles = new Vector3(0,0,0);
+            walkRight = !walkRight;
+            timer = 0f;
         }
 
-        if (movement < 0)
+        if(walkRight)
         {
-            transform.eulerAngles = new Vector3(0,180,0);
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            rig.velocity = Vector2.right * speed;
         }
-    }
-
-    void Jump()
-    {
-        if (Input.GetButtonDown("Jump")) ;
+        else
         {
-            rig.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-        }
+            transform.eulerAngles = new Vector3(0, 180, 0);
+            rig.velocity = Vector2.left * speed;
+        } 
+         
     }
-}
+} 
