@@ -5,26 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c2d39cf-7e68-44aa-be0a-98c5f742e717" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/player/414888__matrixxx__retro-laser-shot-04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/player/414888__matrixxx__retro-laser-shot-04.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/player/515005__matrixxx__retro-space-explosion-or-death-sound-effect.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/player/515005__matrixxx__retro-space-explosion-or-death-sound-effect.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/player/587384__thelittlecrow__hit-land-sound-effect.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/player/587384__thelittlecrow__hit-land-sound-effect.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/player/TelaDeMorte.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/player/TelaDeMorte.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/player/morte.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/player/morte.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/player/mortePerso.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/player/mortePerso.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Solar Sentinel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Solar Sentinel/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Playertest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Playertest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/scripts/Boss1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scripts/Boss1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/player/Capsule.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/player/Capsule.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/player/player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/player/player.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/player/player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/player/player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
