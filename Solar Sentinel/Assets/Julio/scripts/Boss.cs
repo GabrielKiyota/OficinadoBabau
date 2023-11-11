@@ -31,7 +31,9 @@ public class Boss : MonoBehaviour
     public Player vida;
 
     public GameObject aura;
+    public GameObject barreira;
 
+    public aura aurascript;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "bala")
@@ -151,7 +153,46 @@ public class Boss : MonoBehaviour
        if(vidaAtual <= limiteTransicaoEstado2)
         {
             aura.SetActive(true);
+            barreira.SetActive(true);
         }
+
+        if (aurascript.vidaaura <= 0)
+        {
+            aura.SetActive(false);
+            barreira.SetActive(false);
+        }
+
+
+        if (vidaAtual > 0)
+        {
+            // Movimentação
+            Vector3 TargetPosition = player.position;
+            TargetPosition.Set(TargetPosition.x, transform.position.y, transform.position.z);
+            transform.position = Vector3.Lerp(transform.position, TargetPosition, Speed / 100);
+
+            tempoPassadoDesdeInstanciacao += Time.deltaTime;
+        }
+
+        
+     
+
+        // Verifica se pode atacar novamente com base no intervalo de instânciação
+        if (tempoPassadoDesdeInstanciacao >= intervaloDeInstanciacao && vidaAtual>0)
+        {
+            ataque();
+
+        }
+
+        if (tempoPassadoDesdeInstanciacao >= intervaloanimat)
+        {
+            animat();
+        }
+
+
+
+        // Define o estado da animação com base em animState
+        anim.SetInteger("transition", animState);
+
     }
 
     public void Damage(int dmg)

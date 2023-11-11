@@ -8,7 +8,11 @@ public class destroitiro : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if(!collision.gameObject.CompareTag("aura"))
+        {
+            Destroy(gameObject);
+
+        }
 
 
     }
