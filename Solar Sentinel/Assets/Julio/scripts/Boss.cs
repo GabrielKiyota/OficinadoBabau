@@ -30,6 +30,8 @@ public class Boss : MonoBehaviour
 
     public Player vida;
 
+    public GameObject aura;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "bala")
@@ -146,7 +148,10 @@ public class Boss : MonoBehaviour
 
     void Update2()
     {
-       
+       if(vidaAtual <= limiteTransicaoEstado2)
+        {
+            aura.SetActive(true);
+        }
     }
 
     public void Damage(int dmg)
