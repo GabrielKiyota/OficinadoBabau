@@ -19,6 +19,8 @@ public class Boss : MonoBehaviour
 
     public Text VidaBoss;
 
+    public Text barreiraq;
+
 
     public float intervaloDeInstanciacao = 2.0f;
     public float intervaloanimat = 2.5f;
@@ -59,7 +61,7 @@ public class Boss : MonoBehaviour
         {
             VidaBoss.text = "Vida Boss = " + vidaAtual;
         }
-
+        barreiraq.text = "Barreira Life = " + aurascript.vidaaura;
         if (estadoAtual == EstadosBoss3.estado1)
         {
             Update1();
