@@ -6,7 +6,7 @@ public class destroitiro : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);
 
